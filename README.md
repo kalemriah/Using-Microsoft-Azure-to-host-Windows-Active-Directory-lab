@@ -11,7 +11,7 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 <b>-1.)Create Resource group</b>
 <p align="left">
 -Once logged in, redirect to the Home portal for Microsoft Azure. Under 'Azure services' select 'Resources Groups'. Select 'Create a resource'<br/>
-![image1](https://user-images.githubusercontent.com/111719615/210394584-e223d0be-eeff-4d16-a680-1f099820dd12.PNG)
+![image1](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image1.PNG)<br/>
 
 <br/>
 	-Name Resource Group 'ADLAB'<br/>
@@ -23,15 +23,17 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
   &emsp;	<b>IP Addresses Tab<br/></b>
 	-Click on the blue highlighted 'default' under the Subnet name<br/>
   -Change Subnet Address range to '10.0.1.0/24<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image2.PNG)<br/>
     &emsp;	<b>Security Tab<br/></b>
 	-Under Security make sure all tabs are Disabled <br/>
   -You can skip the 'Tags' tab
 	-Review & Create<br/>
 	-Allow the Virtual Network to deploy <br/>
   <p align="center">
-<b>-3.)Create Virtual Machines within Resource groups</b>
+<b>-3.)Create first domain controller VM</b>
 <p align="left">
--Redirect to the Home portal for Microsoft Azure. Under 'Azure services' select 'Virtual Machines' then select Create <br/>
+-Redirect to the Home portal for Microsoft Azure. Under 'Azure services' select 'Virtual Machines' then select Create<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image3.PNG)<br/>
 	&emsp;	<b>Under Basics Tab<br/></b>
 	-Add to Resource Group that was previously created 'ADLAB'<br/>
 	-Name the virtual machine 'DC1'<br/>
@@ -43,6 +45,7 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 		&emsp;<b>Under Disks Tab<br/></b>
 	-Change OS Disk type to Standard HDD<br/>
 	-Select 'Create and Attach a disk'<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image4.PNG)<br/>
 		-Select 'Change Disk Size'<br/>
 		-Change the 'Disk SKU' to Standard HDD<br/>
 		-Change disk size to 10Gb (This is where active directory will be installed)<br/>
@@ -69,6 +72,7 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 	-Click 'Manage' > 'Add roles and features' <br/>
 	-Select Next until on the Server Installation tab<br/>
 	-Check the Active Directory Domain Services and select Add Features<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image5.PNG)<br/>
 	-Select Next until on the Confirm installation selections and finally select install <br/>
 	-Once completed Select the 'Promote this server to domain controller' (if you accidentally closed this tab select the flag with the yellow warning sign on the top right next to the 'Management' tab and you will have this option here)<br/>
 	-Select 'Add new forest' and name the domain "myazurelab.com"<br/>
@@ -108,7 +112,9 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 	&emsp;	<b>Within 'DC1' VM<br/></b>
 	-Redirect to the 'DC1' Virtual Machine on Azure<br/>
 	-Within the 'Overview' tab under the 'Properties' tab  > 'Networking' copy the IP address <br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/network.PNG)
 	-Within the settings tab, select the 'Networking' tab , select the highlighted 'Networking interface'<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image6.PNG)<br/>
 	-Within the Networking interface settings tab select the 'IP configurations' tab<br/>
 	-Select the current IP > Change the 'Dynamic' setting to 'Static' <br/>
 	&emsp;	<b>Within 'OnSite' Virtual Network<br/></b>
@@ -129,7 +135,8 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 		-Right Click the Disk 2 and select 'New Simple Volume'<br/>
 		-Leave the disk as F: and select next until done<br/>
 		&emsp;<b>Adding 'DC2' to the domain<br/></b>
-	-Within the Server Manager select the 'Local Server' tab > 'Workgroups' and click the blue highlighted 'WORKGROUP' <br/>
+	-Within the Server Manager select the 'Local Server' tab > 'Workgroups' and click the blue highlighted 'WORKGROUP'<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image7.PNG)<br/>
 	-Within the System Properties > Computer Name tab, select the 'Change..." box<br/>
 	-Within Computer Name/Domain Changes, under Members of, select the Domain check box and type 'myazurelab.com'<br/>
 	-Use the credentials of 'DC1' to authorize this new addition <br/>
@@ -156,6 +163,7 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 	&emsp;<b>	Within 'DC2' VM<br/></b>
 	-Redirect to the 'DC2' Virtual Machine on Azure<br/>
 	-Within the 'Overview' tab under the 'Properties' tab  > 'Networking' copy the IP address (Similar to step 6) <br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/network.PNG)
 	-Within the settings tab, select the 'Networking' tab , select the highlighted 'Networking interface'<br/>
 	-Within the Networking interface settings tab select the 'IP configurations' tab<br/>
 	-Select the current IP > Change the 'Dynamic' setting to 'Static' <br/>
@@ -172,11 +180,13 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 <p align="left">
 	&emsp;	<b>Within 'OnSite' virtual network<br/></b>
 	-Within settings, select Subnets<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image8.PNG)
 	-Copy the IPv4 subnets<br/>
 	&emsp;	<b>Within DC1<br/></b>
 	-Within Server Manager select Tools > Active Directory Sites and Services<br/>
 	-Right click the Subnets OU, then select 'New Subnet'<br/>
 	-Paste the IPv4 subnets from 'OnSite' into the prefix box and select the 'OnSite' Site Name then select OK<br/>
+	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image9.PNG)
   <p align="center">
 <b>-10.) Confirming the dual domain controllers are working</b>
 <p align="left">
