@@ -197,4 +197,4 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 	-Right click on 'myazurelab.com' > select Change Domain Controller <br/>
 	-Select the DC2 'DC2.myazurelab.com' then select OK<br/>
 	-Open the Users OU and find the Test1 user to confirm that the domain controllers are connected<br/>
-<b>Congratulations you now have an active directory lab on Azure!</b>
+<b>Congratulations you now have an active directory lab with dual domain controllers on Azure! Have fun futhering your skillsets!</b>
