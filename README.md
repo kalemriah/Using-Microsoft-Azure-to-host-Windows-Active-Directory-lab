@@ -11,7 +11,7 @@ This is a walkthrough on how to set up an Active Directory lab within the Micros
 <b>-1.)Create Resource group</b>
 <p align="left">
 -Once logged in, redirect to the Home portal for Microsoft Azure. Under 'Azure services' select 'Resources Groups'. Select 'Create a resource'<br/>
-![image](image/image1.PNG)
+![image1](https://user-images.githubusercontent.com/111719615/210394584-e223d0be-eeff-4d16-a680-1f099820dd12.PNG)
 
 <br/>
 	-Name Resource Group 'ADLAB'<br/>
