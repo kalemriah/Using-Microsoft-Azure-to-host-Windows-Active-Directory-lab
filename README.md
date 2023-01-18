@@ -11,8 +11,8 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 <b>-1.)Create Resource group</b>
 <p align="left">
 -Once logged in, redirect to the Home portal for Microsoft Azure. Under 'Azure services' select 'Resources Groups'. Select 'Create a resource'<br/>
-![image1](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image1.PNG)<br/>
-	-Name Resource Group 'ADLAB'<br/>
+<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image1.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
+-Name Resource Group 'ADLAB'<br/>
   <p align="center">
 <b>-2.)Virtual Network</b>
 <p align="left">
@@ -21,7 +21,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
   &emsp;	<b>IP Addresses Tab<br/></b>
 	-Click on the blue highlighted 'default' under the Subnet name<br/>
   -Change Subnet Address range to '10.0.1.0/24<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image2.PNG)<br/>
+  <p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image2.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
     &emsp;	<b>Security Tab<br/></b>
 	-Under Security make sure all tabs are Disabled <br/>
   -You can skip the 'Tags' tab
@@ -31,7 +31,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 <b>-3.)Create first domain controller VM</b>
 <p align="left">
 -Redirect to the Home portal for Microsoft Azure. Under 'Azure services' select 'Virtual Machines' then select Create<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image3.PNG)<br/>
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image3.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
 	&emsp;	<b>Under Basics Tab<br/></b>
 	-Add to Resource Group that was previously created 'ADLAB'<br/>
 	-Name the virtual machine 'DC1'<br/>
@@ -43,7 +43,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 		&emsp;<b>Under Disks Tab<br/></b>
 	-Change OS Disk type to Standard HDD<br/>
 	-Select 'Create and Attach a disk'<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image4.PNG)<br/>
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image4.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
 		-Select 'Change Disk Size'<br/>
 		-Change the 'Disk SKU' to Standard HDD<br/>
 		-Change disk size to 10Gb (This is where active directory will be installed)<br/>
@@ -70,7 +70,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 	-Click 'Manage' > 'Add roles and features' <br/>
 	-Select Next until on the Server Installation tab<br/>
 	-Check the Active Directory Domain Services and select Add Features<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image5.PNG)<br/>
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image5.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
 	-Select Next until on the Confirm installation selections and finally select install <br/>
 	-Once completed Select the 'Promote this server to domain controller' (if you accidentally closed this tab select the flag with the yellow warning sign on the top right next to the 'Management' tab and you will have this option here)<br/>
 	-Select 'Add new forest' and name the domain "myazurelab.com"<br/>
@@ -110,9 +110,9 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 	&emsp;	<b>Within 'DC1' VM<br/></b>
 	-Redirect to the 'DC1' Virtual Machine on Azure<br/>
 	-Within the 'Overview' tab under the 'Properties' tab  > 'Networking' copy the IP address <br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/network.PNG)
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/network.PNG?raw=true"/> <br/><p align="left">
 	-Within the settings tab, select the 'Networking' tab , select the highlighted 'Networking interface'<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image6.PNG)<br/>
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image6.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
 	-Within the Networking interface settings tab select the 'IP configurations' tab<br/>
 	-Select the current IP > Change the 'Dynamic' setting to 'Static' <br/>
 	&emsp;	<b>Within 'OnSite' Virtual Network<br/></b>
@@ -134,7 +134,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 		-Leave the disk as F: and select next until done<br/>
 		&emsp;<b>Adding 'DC2' to the domain<br/></b>
 	-Within the Server Manager select the 'Local Server' tab > 'Workgroups' and click the blue highlighted 'WORKGROUP'<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image7.PNG)<br/>
+<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image7.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
 	-Within the System Properties > Computer Name tab, select the 'Change..." box<br/>
 	-Within Computer Name/Domain Changes, under Members of, select the Domain check box and type 'myazurelab.com'<br/>
 	-Use the credentials of 'DC1' to authorize this new addition <br/>
@@ -161,7 +161,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 	&emsp;<b>	Within 'DC2' VM<br/></b>
 	-Redirect to the 'DC2' Virtual Machine on Azure<br/>
 	-Within the 'Overview' tab under the 'Properties' tab  > 'Networking' copy the IP address (Similar to step 6) <br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/network.PNG)
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/network.PNG?raw=true"/> <br/><p align="left">
 	-Within the settings tab, select the 'Networking' tab , select the highlighted 'Networking interface'<br/>
 	-Within the Networking interface settings tab select the 'IP configurations' tab<br/>
 	-Select the current IP > Change the 'Dynamic' setting to 'Static' <br/>
@@ -178,13 +178,13 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 <p align="left">
 	&emsp;	<b>Within 'OnSite' virtual network<br/></b>
 	-Within settings, select Subnets<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image8.PNG)
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image8.PNG?raw=true"/> <br/><p align="left">
 	-Copy the IPv4 subnets<br/>
 	&emsp;	<b>Within DC1<br/></b>
 	-Within Server Manager select Tools > Active Directory Sites and Services<br/>
 	-Right click the Subnets OU, then select 'New Subnet'<br/>
 	-Paste the IPv4 subnets from 'OnSite' into the prefix box and select the 'OnSite' Site Name then select OK<br/>
-	![](https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image9.PNG)
+	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image9.PNG?raw=true"/> <br/><p align="left">
   <p align="center">
 <b>-10.) Confirming the dual domain controllers are working</b>
 <p align="left">
