@@ -36,7 +36,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 	-Add to Resource Group that was previously created 'ADLAB'<br/>
 	-Name the virtual machine 'DC1'<br/>
 	-Change Availability option to Availability set and Create an availability set<br/>
-		-Name 'ADAvailSet' and leave as defaults<br/> 
+		-Name 'ADLAB' and leave as defaults<br/> 
 	-Use a Windows Server 2019 Database serve image <br/>
 		-2vcpus 8Gbs memory works great<br/>
 	- Create username and password <br/>
@@ -87,7 +87,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 &emsp;	<b>	Under Basics Tab<br/></b>
 	-Add to Resource Group<br/>
 	-Name 'DC2'<br/>
-	-Change Availability option to Availability set 'ADAvailSet'<br/>
+	-Change Availability option to Availability set 'ADLAB'<br/>
 	-Use a Windows Server 2019 Database serve image <br/>
 		-2vcpus 8Gbs memory works great<br/>
 	- Create username and password <br/>
