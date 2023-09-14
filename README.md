@@ -114,7 +114,7 @@ This is a 10 step walkthrough with screenshots on how to set up an Active Direct
 	-Within the settings tab, select the 'Networking' tab , select the highlighted 'Networking interface'<br/>
 	<p align="center"><img src="https://github.com/kalemriah/Using-Microsoft-Azure-to-host-Windows-Active-Directory-lab/blob/main/image/image6.PNG?raw=true" width="720" height="480" /> <br/><p align="left">
 	-Within the Networking interface settings tab select the 'IP configurations' tab<br/>
-	-Select the current IP > Change the 'Dynamic' setting to 'Static' <br/>
+	-Select the ipconfig1 > Change the 'Dynamic' setting to 'Static' <br/>
 	&emsp;	<b>Within 'OnSite' Virtual Network<br/></b>
 	-Redirect to the 'OnSite' Virtual Network <br/>
 	-Within the settings tab, select the 'DNS servers' tab and then select Custom <br/>
